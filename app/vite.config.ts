@@ -70,7 +70,7 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
-  "connect-src 'self' https: http://localhost:* http://127.0.0.1:* http://[::1]:*",
+  "connect-src 'self' https: http://localhost:* http://127.0.0.1:*",
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",

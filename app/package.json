@@ -21,7 +21,8 @@
     "prebuild": "node scripts/copy-ocr-assets.mjs",
     "smoke:electron": "npm run build && electron scripts/smoke-electron.cjs",
     "release": "npm run build && electron-builder --win --publish always",
-    "release:draft": "npm run build && electron-builder --win --publish onTagOrDraft"
+    "release:draft": "npm run build && electron-builder --win --publish onTagOrDraft",
+    "screenshots": "npm run build && electron scripts/screenshots.cjs"
   },
   "dependencies": {
     "@capacitor/app": "^7.1.2",
