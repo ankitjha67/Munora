@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "description": "Munora, a local-first household finance dashboard for Windows",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankitjha67/Munora.git"
+  },
   "main": "electron/main.cjs",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:electron\"",
