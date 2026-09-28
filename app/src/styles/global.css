@@ -2020,3 +2020,7 @@ input.control, select.control { flex-shrink: 1; }
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
   font-size: 12px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; font-family: inherit;
 }
+
+/* ============ about ============ */
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px 18px; margin: 6px 0 4px; }
+.about-grid > div { display: flex; flex-direction: column; line-height: 1.35; }

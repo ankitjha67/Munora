@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Plus, Trash2, FolderOpen, Download, Upload, RefreshCw, Globe, Eye, EyeOff, Loader2, Package as PackageIcon } from 'lucide-react'
 import { useStore, useStoreCtx } from '../lib/store'
+import { getStorage } from '../lib/storage'
+import { Logo } from '../components/Shell'
 import type { Store } from '../lib/types'
 import { buildDemoStore } from '../lib/seed'
 import { clearMfCaches } from '../lib/mf'
@@ -292,8 +294,48 @@ export default function SettingsPage() {
       </div>
 
       <GlossaryCard />
+      <AboutCard />
     </>
   )
+}
+
+function AboutCard() {
+  const store = useStore()
+  const REPO = 'https://github.com/' + DEFAULT_UPDATE_REPO
+  return (
+    <div className="card">
+      <div className="card-title">
+        <span className="row" style={{ gap: 8 }}><Logo size={18} /> About {APP_NAME}</span>
+        <span className="small muted">v{__APP_VERSION__}</span>
+      </div>
+      <p className="card-sub">
+        {APP_NAME} is a local-first personal-finance app for your whole household. Accounts, transactions,
+        investments, loans and property in one place, with every figure kept on this device. There is no account to
+        create and no server that holds your data; the only network calls are to services you choose (market and
+        macro data, the update check, and your own AI provider).
+      </p>
+      <div className="about-grid">
+        <div><span className="small muted">Version</span><b>{__APP_VERSION__}</b></div>
+        <div><span className="small muted">Storage</span><b>On this {storageLabel()}</b></div>
+        <div><span className="small muted">Base currency</span><b>{store.settings.currencyCode}</b></div>
+        <div><span className="small muted">License</span><b>All rights reserved</b></div>
+      </div>
+      <div className="row wrap" style={{ gap: 8, marginTop: 12 }}>
+        <a className="btn" href={REPO} target="_blank" rel="noreferrer"><Globe size={14} /> Project on GitHub</a>
+        <a className="btn" href={REPO + '/releases'} target="_blank" rel="noreferrer"><Download size={14} /> All releases</a>
+        <a className="btn" href={REPO + '/issues/new'} target="_blank" rel="noreferrer">Report an issue</a>
+      </div>
+      <p className="small muted" style={{ marginTop: 10 }}>
+        Not affiliated with any commercial finance product. Nothing here is financial advice; for personalized
+        investment, tax or legal decisions, consult a qualified professional.
+      </p>
+    </div>
+  )
+}
+
+function storageLabel(): string {
+  const k = getStorage().kind
+  return k === 'electron' ? 'PC (local file)' : k === 'capacitor' ? 'device' : 'browser (dev)'
 }
 
 function FxCard() {

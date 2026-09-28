@@ -190,8 +190,6 @@ above).
 
 ## Docs
 
-- [PRD.md](PRD.md) — product requirements, feature by feature.
-- [CONTEXT.md](CONTEXT.md) — engineering context and hard-won gotchas.
 - [RELEASING.md](RELEASING.md) — how to cut a release and why upgrades keep user data.
 - [BRANDING.md](BRANDING.md) · [MOBILE.md](MOBILE.md)
 

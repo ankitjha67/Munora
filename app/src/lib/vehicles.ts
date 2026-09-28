@@ -9,7 +9,9 @@ export interface Vehicle {
   key: string
   label: string
   type: AccountType
-  region: 'US' | 'IN' | 'UK' | 'INTL'
+  /** Home region. Vehicles outside the app's region still appear under "other regions"
+   * in the picker, so someone in the US can still add, say, a Canadian RRSP. */
+  region: 'US' | 'IN' | 'UK' | 'EU' | 'CA' | 'AU' | 'JP' | 'SG' | 'INTL'
   note?: string
 }
 
@@ -20,9 +22,19 @@ export const VEHICLES: Vehicle[] = [
   { key: 'cash', label: 'Cash / Wallet', type: 'cash', region: 'INTL' },
   { key: 'credit_card', label: 'Credit card', type: 'credit', region: 'INTL' },
   { key: 'brokerage', label: 'Brokerage / Taxable', type: 'investment', region: 'INTL' },
+  { key: 'stocks', label: 'Stocks / Shares', type: 'investment', region: 'INTL' },
+  { key: 'etf', label: 'ETF', type: 'investment', region: 'INTL', note: 'Exchange-traded fund' },
+  { key: 'index_fund', label: 'Index fund', type: 'investment', region: 'INTL' },
+  { key: 'reit', label: 'REIT', type: 'investment', region: 'INTL', note: 'Real-estate investment trust' },
   { key: 'crypto', label: 'Crypto wallet / exchange', type: 'investment', region: 'INTL' },
   { key: 'bonds', label: 'Bonds', type: 'investment', region: 'INTL' },
+  { key: 'money_market', label: 'Money-market fund', type: 'investment', region: 'INTL' },
   { key: 'precious_metal', label: 'Gold / Precious metals', type: 'investment', region: 'INTL' },
+  { key: 'commodities', label: 'Commodities', type: 'investment', region: 'INTL' },
+  { key: 'p2p', label: 'P2P lending', type: 'investment', region: 'INTL' },
+  { key: 'private_equity', label: 'Private equity / Angel', type: 'investment', region: 'INTL' },
+  { key: 'business_equity', label: 'Business ownership / Equity', type: 'investment', region: 'INTL' },
+  { key: 'collectibles', label: 'Collectibles / Art', type: 'investment', region: 'INTL' },
   { key: 'real_estate', label: 'Real estate / Property', type: 'real_estate', region: 'INTL' },
   { key: 'vehicle_asset', label: 'Vehicle', type: 'real_estate', region: 'INTL' },
   { key: 'personal_loan', label: 'Personal loan', type: 'loan', region: 'INTL' },
@@ -35,9 +47,14 @@ export const VEHICLES: Vehicle[] = [
   { key: '403b', label: '403(b)', type: 'retirement', region: 'US' },
   { key: 'trad_ira', label: 'Traditional IRA', type: 'retirement', region: 'US' },
   { key: 'roth_ira', label: 'Roth IRA', type: 'retirement', region: 'US' },
+  { key: 'sep_ira', label: 'SEP IRA', type: 'retirement', region: 'US', note: 'Self-employed' },
+  { key: 'solo_401k', label: 'Solo 401(k)', type: 'retirement', region: 'US', note: 'Self-employed' },
   { key: 'hsa', label: 'HSA', type: 'investment', region: 'US', note: 'Health savings account' },
   { key: '529', label: '529 college plan', type: 'investment', region: 'US' },
   { key: 'i_bonds', label: 'Treasury / I Bonds', type: 'investment', region: 'US' },
+  { key: 'espp', label: 'ESPP', type: 'investment', region: 'US', note: 'Employee stock purchase plan' },
+  { key: 'rsu', label: 'RSUs / Equity comp', type: 'investment', region: 'US' },
+  { key: 'cd_us', label: 'Certificate of Deposit (CD)', type: 'savings', region: 'US' },
 
   // India
   { key: 'epf', label: 'EPF (Provident Fund)', type: 'retirement', region: 'IN' },
@@ -57,8 +74,37 @@ export const VEHICLES: Vehicle[] = [
   { key: 'cash_isa', label: 'Cash ISA', type: 'savings', region: 'UK' },
   { key: 'lisa', label: 'Lifetime ISA (LISA)', type: 'investment', region: 'UK' },
   { key: 'sipp', label: 'SIPP / Pension', type: 'retirement', region: 'UK' },
+  { key: 'workplace_pension', label: 'Workplace pension', type: 'retirement', region: 'UK' },
+  { key: 'jisa', label: 'Junior ISA', type: 'investment', region: 'UK' },
   { key: 'premium_bonds', label: 'Premium Bonds', type: 'savings', region: 'UK' },
+  { key: 'gilts', label: 'Gilts', type: 'investment', region: 'UK', note: 'UK government bonds' },
   { key: 'gia', label: 'General Investment Account', type: 'investment', region: 'UK' },
+
+  // Canada
+  { key: 'rrsp', label: 'RRSP', type: 'retirement', region: 'CA', note: 'Registered retirement savings' },
+  { key: 'tfsa', label: 'TFSA', type: 'investment', region: 'CA', note: 'Tax-free savings account' },
+  { key: 'resp', label: 'RESP', type: 'investment', region: 'CA', note: 'Education savings' },
+  { key: 'fhsa', label: 'FHSA', type: 'investment', region: 'CA', note: 'First-home savings' },
+
+  // Australia
+  { key: 'super', label: 'Superannuation', type: 'retirement', region: 'AU' },
+  { key: 'smsf', label: 'Self-managed super (SMSF)', type: 'retirement', region: 'AU' },
+  { key: 'asx_shares', label: 'ASX shares', type: 'investment', region: 'AU' },
+
+  // Europe
+  { key: 'ucits_etf', label: 'UCITS ETF', type: 'investment', region: 'EU' },
+  { key: 'private_pension_eu', label: 'Private pension', type: 'retirement', region: 'EU' },
+  { key: 'pea', label: 'PEA (France)', type: 'investment', region: 'EU', note: 'Equity savings plan' },
+  { key: 'assurance_vie', label: 'Assurance-vie (France)', type: 'investment', region: 'EU' },
+  { key: 'riester', label: 'Riester pension (Germany)', type: 'retirement', region: 'EU' },
+
+  // Japan
+  { key: 'nisa', label: 'NISA', type: 'investment', region: 'JP' },
+  { key: 'ideco', label: 'iDeCo', type: 'retirement', region: 'JP' },
+
+  // Singapore
+  { key: 'cpf', label: 'CPF', type: 'retirement', region: 'SG', note: 'Central Provident Fund' },
+  { key: 'srs', label: 'SRS', type: 'retirement', region: 'SG', note: 'Supplementary Retirement Scheme' },
 
   // Insurance used as an investment / savings vehicle.
   // Only policies that build cash value, a surrender value or a maturity benefit

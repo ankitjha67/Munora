@@ -47,3 +47,7 @@ Thumbs.db
 
 # Third-party reference screenshots used only during development (not ours to publish)
 /*.webp
+
+# Internal product/engineering docs (kept local, not published)
+PRD.md
+CONTEXT.md
