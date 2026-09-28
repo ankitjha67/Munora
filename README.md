@@ -1,6 +1,6 @@
 <div align="center">
 
-# Nestworth
+# Munora
 
 **Your whole household, one clear number.**
 
@@ -33,8 +33,8 @@ Grab the latest build from the [**Releases**](../../releases) page:
 
 | Platform | File | Notes |
 | --- | --- | --- |
-| **Windows** | `Nestworth Setup <version>.exe` | Download and run the installer. |
-| **Android** | `Nestworth-<version>.apk` | Allow installs from your browser, then open the file. |
+| **Windows** | `Munora Setup <version>.exe` | Download and run the installer. |
+| **Android** | `Munora-<version>.apk` | Allow installs from your browser, then open the file. |
 | **iOS** | build from source | No App Store build; see [below](#build-from-source). |
 
 Inside the app, **Settings → Updates** checks this repository for newer releases and links

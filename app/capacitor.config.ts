@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli'
 
 const config: CapacitorConfig = {
-  appId: 'com.nestworth.app',
-  appName: 'Nestworth',
+  appId: 'com.munora.app',
+  appName: 'Munora',
   webDir: 'dist',
   plugins: {
     // Route fetch through the native HTTP stack so provider APIs (LLM, mutual

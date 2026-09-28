@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Nestworth</string>
-    <string name="title_activity_main">Nestworth</string>
-    <string name="package_name">com.nestworth.app</string>
-    <string name="custom_url_scheme">com.nestworth.app</string>
+    <string name="app_name">Munora</string>
+    <string name="title_activity_main">Munora</string>
+    <string name="package_name">com.munora.app</string>
+    <string name="custom_url_scheme">com.munora.app</string>
 </resources>

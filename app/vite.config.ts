@@ -17,7 +17,7 @@ function llmProxy(): Plugin {
   const MAX_REQUEST = 10 * 1024 * 1024
   const MAX_RESPONSE = 32 * 1024 * 1024
   return {
-    name: 'nestworth-llm-proxy',
+    name: 'munora-llm-proxy',
     configureServer(server) {
       server.middlewares.use('/__llm/fetch', (req, res) => {
         const deny = (code: number, msg: string) => {
@@ -80,7 +80,7 @@ const CSP = [
 
 function cspPlugin(): Plugin {
   return {
-    name: 'nestworth-csp',
+    name: 'munora-csp',
     apply: 'build',
     transformIndexHtml(html) {
       return html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n    <meta http-equiv="Content-Security-Policy" content="${CSP}" />`)

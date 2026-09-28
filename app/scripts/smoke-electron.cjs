@@ -37,7 +37,7 @@ app.whenReady().then(async () => {
         url: location.href,
         mounted: !!root && root.children.length > 0,
         // the preload bridge must be present and must NOT leak Node
-        bridge: typeof window.fathom === 'object' && typeof window.fathom.loadStore === 'function',
+        bridge: typeof window.munora === 'object' && typeof window.munora.loadStore === 'function',
         nodeLeak: typeof window.require !== 'undefined' || typeof window.process !== 'undefined',
         text: (document.body.innerText || '').slice(0, 120).replace(/\\s+/g, ' ').trim(),
       };

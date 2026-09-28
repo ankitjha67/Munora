@@ -1,4 +1,4 @@
-# Nestworth, branding & icon
+# Munora, branding & icon
 
 This documents the app name, the icon concept, and ready-to-paste prompts for
 generating a higher-fidelity or alternative icon in Midjourney, DALL-E, and other
@@ -14,16 +14,19 @@ prompts are for polishing or exploring variations, not a blocker.
 
 ## Name
 
-**Chosen: Nestworth** (applied in `app/src/lib/constants.ts` `APP_NAME` and
-`app/package.json`). It fuses "nest egg" and "net worth", which is exactly what
-the app tracks, and it is easy to say and spell. To change it, edit `APP_NAME`,
-`package.json` `name`/`productName`/`build.appId`, and `index.html` `<title>`.
+**Chosen: Munora** (applied in `app/src/lib/constants.ts` `APP_NAME` and
+`app/package.json`). It is a short, coined name — no prior finance product or app
+owns it, so it is clean to register a domain and trademark for, unlike the more
+descriptive names in this space, which are heavily taken. To change it, edit
+`APP_NAME`, `package.json` `name`/`productName`/`build.appId`,
+`capacitor.config.ts`, the Android `applicationId`/`namespace` (and the
+`com/<name>/app` package folder), and `index.html` `<title>`.
 
 ### Alternatives (all coined or uncommon, to reduce collision)
 
 | Name | Idea |
 |---|---|
-| **Nestworth** (chosen) | Nest egg + net worth |
+| **Munora** (chosen) | Coined; no prior owner, easy to say and spell |
 | Penvault | Pennies saved + a vault (security) |
 | Ledgerly | Ledger + a soft modern suffix |
 | Sumworth | Sum of what you are worth |
@@ -81,7 +84,7 @@ coin dot, flat vector, negative space ... --ar 1:1 --style raw --v 6.1
 Wordmark (optional):
 
 ```
-modern fintech wordmark logo "Nestworth", lowercase geometric sans-serif,
+modern fintech wordmark logo "Munora", lowercase geometric sans-serif,
 indigo #4F46E5, tight letter spacing, a small ascending-bars mark as the dot over
 a letter, on white, vector, minimal, no gradient background --ar 3:1 --style raw
 --v 6.1

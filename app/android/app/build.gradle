@@ -11,10 +11,10 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.nestworth.app"
+    namespace "com.munora.app"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.nestworth.app"
+        applicationId "com.munora.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

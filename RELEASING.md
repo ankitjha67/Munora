@@ -1,4 +1,4 @@
-# Shipping a new version of Nestworth
+# Shipping a new version of Munora
 
 How a new build reaches users, and why their data survives it.
 
@@ -23,7 +23,7 @@ This is the part worth being confident about.
 the product name:
 
 ```
-%APPDATA%\Nestworth\fathom-data.json      (plus fathom-data.json.bak)
+%APPDATA%\Munora\munora-data.json      (plus munora-data.json.bak)
 ```
 
 That is **not** inside the installed program, so replacing the program leaves it alone.
@@ -33,9 +33,9 @@ to the same user after the upgrade.
 
 Two things would break that, so do not change them casually:
 
-- `build.productName` in `app/package.json` (currently `Nestworth`) decides the folder
+- `build.productName` in `app/package.json` (currently `Munora`) decides the folder
   name. Rename it and the new version looks at an empty folder.
-- `build.appId` (`com.nestworth.app`) identifies the app to Windows for
+- `build.appId` (`com.munora.app`) identifies the app to Windows for
   install/upgrade. Keep it stable so a new version replaces the old one instead of
   installing alongside it.
 
@@ -43,8 +43,8 @@ Two things would break that, so do not change them casually:
 upgrades in place and keeps the app's private storage. A debug-signed APK cannot upgrade
 a release-signed install (and vice versa): Android refuses the install.
 
-Release signing is set up: `app/android/app/nestworth-release.jks` with credentials in
-`app/android/key.properties`. Both are git-ignored. **Back them up somewhere safe and
+Release signing is set up: a git-ignored keystore under `app/android/app/`, with its path
+and credentials recorded in `app/android/key.properties`. Both are git-ignored. **Back them up somewhere safe and
 never change them** — every future release must be signed with this same keystore, or
 existing users cannot update in place (they would have to uninstall, which erases their
 on-device data). If you ever lose it, that is unrecoverable for installed users. To build

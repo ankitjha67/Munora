@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('fathom', {
+contextBridge.exposeInMainWorld('munora', {
   platform: 'electron',
   loadStore: () => ipcRenderer.invoke('store:load'),
   saveStore: (json) => ipcRenderer.invoke('store:save', json),

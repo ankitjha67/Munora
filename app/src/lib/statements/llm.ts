@@ -21,7 +21,7 @@ async function send(method: string, url: string, headers: Record<string, string>
   // Transports, in order: Electron main-process proxy, Vite dev proxy (browser
   // preview), then plain fetch. On mobile, CapacitorHttp patches fetch to go
   // native, so plain fetch already bypasses CORS there.
-  const bridge = window.fathom
+  const bridge = window.munora
   if (bridge?.llmFetch) return bridge.llmFetch({ url, method, headers, body })
   if (import.meta.env.DEV) {
     const res = await fetch('/__llm/fetch', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url, method, headers, body }) })

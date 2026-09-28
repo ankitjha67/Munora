@@ -84,10 +84,10 @@ export default function SettingsPage() {
             <label>App name</label>
             <input
               className="control"
-              defaultValue={store.settings.appName ?? 'Fathom'}
+              defaultValue={store.settings.appName ?? APP_NAME}
               onBlur={(e) =>
                 mutate((d) => {
-                  d.settings.appName = e.target.value.trim() || 'Fathom'
+                  d.settings.appName = e.target.value.trim() || APP_NAME
                 })
               }
             />

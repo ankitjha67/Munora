@@ -196,14 +196,14 @@ export default function ImportPage() {
 
   const scanInbox = async () => {
     const cfg = store.settings.emailInbox
-    if (!window.fathom?.scanEmail || !cfg?.host || !cfg?.user) {
+    if (!window.munora?.scanEmail || !cfg?.host || !cfg?.user) {
       setShowInbox(true)
       return
     }
     setRunning(true)
     setProgress('Connecting to mailbox')
     try {
-      const res = await window.fathom!.scanEmail!({ ...cfg, domains: senderSearchDomains() })
+      const res = await window.munora!.scanEmail!({ ...cfg, domains: senderSearchDomains() })
       if (!res.ok) throw new Error(res.error || 'Mailbox scan failed')
       const inputs: EmailInput[] = []
       for (const m of res.messages) {
@@ -267,7 +267,7 @@ export default function ImportPage() {
 
   const patch = (id: string, p: Partial<CategorizedRow>) => setRows((cur) => cur.map((r) => (r.id === id ? { ...r, ...p } : r)))
 
-  const canEmailAuto = !!window.fathom?.scanEmail
+  const canEmailAuto = !!window.munora?.scanEmail
 
   return (
     <>

@@ -1,6 +1,6 @@
-# Nestworth on Android & iOS
+# Munora on Android & iOS
 
-Nestworth ships as one codebase (`app/`) that runs as a Windows desktop app
+Munora ships as one codebase (`app/`) that runs as a Windows desktop app
 (Electron) and as native Android/iOS apps (Capacitor). The same React UI runs in
 all of them; only the storage and HTTP layers differ, and both are handled
 automatically.
@@ -8,7 +8,7 @@ automatically.
 ## What "100% local" means here
 
 - All financial data is stored **on the device**, in a single JSON file in the
-  app's private storage (`nestworth-data.json` via Capacitor Filesystem). No
+  app's private storage (`munora-data.json` via Capacitor Filesystem). No
   account, no server, no cloud sync.
 - The app works **fully offline**. Every page, chart, import, and calculation is
   local. Only three optional features reach the network, and only with your
@@ -28,7 +28,7 @@ automatically.
 ## Android
 
 The Android project already exists at `app/android` (created with `npx cap add
-android`) and is branded with the Nestworth icon and splash.
+android`) and is branded with the Munora icon and splash.
 
 ```bash
 cd app

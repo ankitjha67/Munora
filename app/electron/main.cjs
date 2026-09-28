@@ -20,7 +20,7 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 const dataDir = () => app.getPath('userData');
-const dataFile = () => path.join(dataDir(), 'fathom-data.json');
+const dataFile = () => path.join(dataDir(), 'munora-data.json');
 
 // ---------- secrets at rest ----------
 // API keys, the IMAP app password and statement-PDF passwords are encrypted with
@@ -123,7 +123,7 @@ function createWindow() {
     minHeight: 700,
     backgroundColor: '#F7F5F1',
     autoHideMenuBar: true,
-    title: 'Nestworth',
+    title: 'Munora',
     ...(ICON_PATH ? { icon: ICON_PATH } : {}),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -190,7 +190,7 @@ function validLlmRequest(req) {
 }
 
 // Windows groups taskbar buttons and picks the icon by this id.
-if (process.platform === 'win32') app.setAppUserModelId('com.nestworth.app');
+if (process.platform === 'win32') app.setAppUserModelId('com.munora.app');
 
 app.whenReady().then(() => {
   // Serve the built app from dist/ over app:// with a path-traversal guard.

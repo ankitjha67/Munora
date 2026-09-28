@@ -1,8 +1,8 @@
 {
-  "name": "nestworth",
-  "productName": "Nestworth",
+  "name": "munora",
+  "productName": "Munora",
   "version": "0.1.0",
-  "description": "Nestworth, a local-first household finance dashboard for Windows",
+  "description": "Munora, a local-first household finance dashboard for Windows",
   "private": true,
   "main": "electron/main.cjs",
   "scripts": {
@@ -60,8 +60,8 @@
     "wait-on": "^8.0.4"
   },
   "build": {
-    "appId": "com.nestworth.app",
-    "productName": "Nestworth",
+    "appId": "com.munora.app",
+    "productName": "Munora",
     "electronDist": "node_modules/electron/dist",
     "directories": {
       "output": "release"

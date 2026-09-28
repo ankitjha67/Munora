@@ -12,10 +12,10 @@ const path = require('node:path')
 
 nativeTheme.themeSource = 'light' // consistent light-mode shots
 
-// Unpackaged electron derives userData from package.json "name" (nestworth), but the
-// packaged app and its demo data use the productName ("Nestworth"). Point at that so
+// Unpackaged electron derives userData from package.json "name" (munora), but the
+// packaged app and its demo data use the productName ("Munora"). Point at that so
 // screenshots show real data instead of the first-run onboarding screen.
-app.setPath('userData', path.join(app.getPath('appData'), 'Nestworth'))
+app.setPath('userData', path.join(app.getPath('appData'), 'Munora'))
 
 require('../electron/main.cjs') // registers scheme + IPC, creates the window
 

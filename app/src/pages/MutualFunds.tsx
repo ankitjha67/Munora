@@ -391,7 +391,7 @@ function ExploreTab({ onOpen, compare }: { onOpen: (code: number) => void; compa
   const loadAll = (force = false) => {
     setStarted(true)
     try {
-      localStorage.setItem('fathom-mf-explore-armed', '1')
+      localStorage.setItem('munora-mf-explore-armed', '1')
     } catch {
       /* ignore */
     }
@@ -425,7 +425,7 @@ function ExploreTab({ onOpen, compare }: { onOpen: (code: number) => void; compa
     // Cache expired (24h) but the user has used Explore before → refresh automatically.
     let armed = false
     try {
-      armed = localStorage.getItem('fathom-mf-explore-armed') === '1'
+      armed = localStorage.getItem('munora-mf-explore-armed') === '1'
     } catch {
       /* ignore */
     }

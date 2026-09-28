@@ -1,7 +1,7 @@
 // How a property is performing as an investment: appreciation against what it cost,
 // annualised growth, equity against the mortgage, and rental yield.
 //
-// Valuations are the user's own numbers. Nestworth does not scrape listing portals:
+// Valuations are the user's own numbers. Munora does not scrape listing portals:
 // those feeds are unreliable and their terms forbid it, and a stale scrape would be
 // worse than no number on something this consequential. Instead you record a value
 // yourself, compute one from a local rate per unit area (the circle/market rate), or

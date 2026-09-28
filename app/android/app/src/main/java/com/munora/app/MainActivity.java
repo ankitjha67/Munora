@@ -1,4 +1,4 @@
-package com.nestworth.app;
+package com.munora.app;
 
 import com.getcapacitor.BridgeActivity;
 

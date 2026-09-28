@@ -63,7 +63,7 @@ const CURRENCY_COUNTRY: Record<string, [iso3: string, name: string]> = {
 
 export const macroCountry = (currency: string) => CURRENCY_COUNTRY[currency]
 
-const CACHE_KEY = 'fathom-macro-v1'
+const CACHE_KEY = 'munora-macro-v1'
 export const MACRO_TTL_MS = 30 * 24 * 3600 * 1000
 
 type Cache = Record<string, MacroSnapshot>

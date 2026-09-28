@@ -198,7 +198,7 @@ export async function exploreCategory(cat: ExploreCategory, take = 5): Promise<E
 }
 
 // ---------- small persistent summary cache (Explore results, 24h) ----------
-const EXPLORE_CACHE_KEY = 'fathom-mf-explore-v1'
+const EXPLORE_CACHE_KEY = 'munora-mf-explore-v1'
 interface ExploreCache {
   ts: number
   rows: Record<string, ExploreRow[]>
@@ -225,7 +225,7 @@ export function saveExploreCache(rows: Record<string, ExploreRow[]>) {
 }
 
 // ---------- watchlist summary cache (instant paint, then revalidate) ----------
-const WATCH_SUM_KEY = 'fathom-mf-watch-sum-v1'
+const WATCH_SUM_KEY = 'munora-mf-watch-sum-v1'
 export const WATCH_TTL_MS = 6 * 3600 * 1000
 
 export interface WatchSummary {
@@ -256,8 +256,8 @@ export function saveWatchSummary(s: WatchSummary) {
 }
 
 // ---------- new-listing discovery (diff the full AMFI scheme list) ----------
-const KNOWN_KEY = 'fathom-mf-known-v1'
-const NEW_SCAN_KEY = 'fathom-mf-newscan-v1'
+const KNOWN_KEY = 'munora-mf-known-v1'
+const NEW_SCAN_KEY = 'munora-mf-newscan-v1'
 export const NEW_SCAN_TTL_MS = 7 * 24 * 3600 * 1000
 
 export interface NewScanResult {

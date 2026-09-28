@@ -1,4 +1,4 @@
-# Fathom
+# Munora
 
 Local-first household finance dashboard for Windows, a Monarch/SharkFin-style
 app built with Electron + React. All data lives in one JSON file on your PC.
@@ -27,7 +27,7 @@ First launch offers **demo data** (a realistic sample household: 2 earners,
 
 ## Where your data lives
 
-- Desktop app: `%APPDATA%/fathom/fathom-data.json` (+ `.bak` backup written on
+- Desktop app: `%APPDATA%/Munora/munora-data.json` (+ `.bak` backup written on
   every save). Settings → Data → "Open data folder".
 - Backup = copy that file, or Settings → Export backup.
 

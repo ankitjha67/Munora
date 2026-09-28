@@ -11,7 +11,7 @@ import { migrate, CURRENT_SCHEMA } from './migrate'
 import { todayISO } from './dates'
 import { APP_NAME } from './constants'
 
-export const BACKUP_FORMAT = 'nestworth.backup'
+export const BACKUP_FORMAT = 'munora.backup'
 export const BACKUP_FORMAT_VERSION = 1
 
 export interface BackupManifest {

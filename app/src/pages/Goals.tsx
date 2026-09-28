@@ -71,7 +71,7 @@ export default function GoalsPage() {
       {plans.length === 0 ? (
         <EmptyState
           title="No goals yet"
-          sub="Create a goal like a college fund, a home down payment or an emergency fund, then attach the accounts and mutual funds that pay for it. Nestworth tracks the combined value and tells you whether you are on pace."
+          sub="Create a goal like a college fund, a home down payment or an emergency fund, then attach the accounts and mutual funds that pay for it. Munora tracks the combined value and tells you whether you are on pace."
           action={<button className="btn primary" onClick={() => setEditing('new')}>Create your first goal</button>}
         />
       ) : (

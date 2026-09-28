@@ -1,10 +1,10 @@
-export const APP_NAME = 'Nestworth'
+export const APP_NAME = 'Munora'
 export const APP_TAGLINE = 'Your whole household, one clear number'
 
 /** Official repository releases are published to. Used as the default source for the
  * in-app update check so users get updates without configuring anything; overridable
  * in Settings for forks. */
-export const DEFAULT_UPDATE_REPO = 'ankitjha67/Nestworth'
+export const DEFAULT_UPDATE_REPO = 'ankitjha67/Munora'
 
 // Widely used currencies, so the base currency is not limited to a handful.
 // Intl handles the symbol and grouping for each.

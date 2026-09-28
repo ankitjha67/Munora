@@ -392,7 +392,7 @@ export function buildDemoStore(): Store {
 
   return {
     schemaVersion: 2,
-    settings: { currencyCode: 'USD', appName: 'Nestworth', onboarded: true, region: 'US', theme: 'system' },
+    settings: { currencyCode: 'USD', appName: 'Munora', onboarded: true, region: 'US', theme: 'system' },
     profiles,
     households,
     importRules: [],

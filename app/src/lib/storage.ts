@@ -34,7 +34,7 @@ export interface EmailScanResponse {
   messages: EmailScanMessage[]
 }
 
-interface FathomBridge {
+interface MunoraBridge {
   platform: 'electron'
   loadStore(): Promise<string | null>
   saveStore(json: string): Promise<boolean>
@@ -45,7 +45,7 @@ interface FathomBridge {
 
 declare global {
   interface Window {
-    fathom?: FathomBridge
+    munora?: MunoraBridge
   }
 }
 
@@ -56,8 +56,8 @@ export interface StorageAdapter {
   openDataFolder?: () => void
 }
 
-const LS_KEY = 'fathom-store-v1'
-const MOBILE_FILE = 'nestworth-data.json'
+const LS_KEY = 'munora-store-v1'
+const MOBILE_FILE = 'munora-data.json'
 
 function parseStore(json: string | null): Store | null {
   if (!json) return null
@@ -95,7 +95,7 @@ export function getStorage(): StorageAdapter {
   }
 
   // Desktop (Electron): file-backed store via the main process.
-  const bridge = window.fathom
+  const bridge = window.munora
   if (bridge) {
     return {
       kind: 'electron',
