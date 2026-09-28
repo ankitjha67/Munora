@@ -195,7 +195,6 @@ above).
 
 ## License
 
-No license has been chosen yet, so all rights are reserved by the author. Add a `LICENSE`
-file to permit reuse.
+Released under the [MIT License](LICENSE).
 
 <div align="center"><sub>Screenshots use built-in demo data (the fictional "Rivera household").</sub></div>
