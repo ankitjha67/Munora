@@ -41,9 +41,15 @@ Two things would break that, so do not change them casually:
 
 **Android.** Installing a newer APK with the same `appId` and a **matching signing key**
 upgrades in place and keeps the app's private storage. A debug-signed APK cannot upgrade
-a release-signed install (and vice versa): Android refuses the install. Once you publish
-a release-signed build, keep that keystore safe; losing it means users must uninstall
-(losing data) to move forward.
+a release-signed install (and vice versa): Android refuses the install.
+
+Release signing is set up: `app/android/app/nestworth-release.jks` with credentials in
+`app/android/key.properties`. Both are git-ignored. **Back them up somewhere safe and
+never change them** — every future release must be signed with this same keystore, or
+existing users cannot update in place (they would have to uninstall, which erases their
+on-device data). If you ever lose it, that is unrecoverable for installed users. To build
+a signed APK, `./gradlew assembleRelease` (the Gradle config picks up `key.properties`
+automatically; without it, builds fall back to debug signing).
 
 **Schema changes.** If the store shape changes, raise `CURRENT_SCHEMA` in
 `app/src/lib/migrate.ts` and add the upgrade step. `migrate()` runs on load and on every
