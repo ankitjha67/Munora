@@ -21,7 +21,6 @@
     "dist": "npm run build && electron-builder --win",
     "cap:sync": "npm run build && cap sync",
     "cap:android": "npm run build && cap sync android && cap open android",
-    "cap:ios": "npm run build && cap sync ios && cap open ios",
     "prebuild": "node scripts/copy-ocr-assets.mjs",
     "smoke:electron": "npm run build && electron scripts/smoke-electron.cjs",
     "release": "npm run build && electron-builder --win --publish always",
@@ -48,7 +47,6 @@
   "devDependencies": {
     "@capacitor/android": "^7.6.9",
     "@capacitor/cli": "^7.6.9",
-    "@capacitor/ios": "^7.6.9",
     "@tesseract.js-data/eng": "^1.0.0",
     "@types/d3-sankey": "^0.12.4",
     "@types/react": "^19.1.12",

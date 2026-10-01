@@ -1,8 +1,8 @@
-# Munora on Android & iOS
+# Munora on Android
 
 Munora ships as one codebase (`app/`) that runs as a Windows desktop app
-(Electron) and as native Android/iOS apps (Capacitor). The same React UI runs in
-all of them; only the storage and HTTP layers differ, and both are handled
+(Electron) and as a native Android app (Capacitor). The same React UI runs in
+both; only the storage and HTTP layers differ, and both are handled
 automatically.
 
 ## What "100% local" means here
@@ -22,8 +22,6 @@ automatically.
 
 - Node 20+ and the repo installed: `cd app && npm install`
 - Android: Android Studio (SDK + platform tools) and a JDK 17+.
-- iOS: a Mac with Xcode and CocoaPods (`sudo gem install cocoapods`). iOS cannot
-  be built on Windows or Linux.
 
 ## Android
 
@@ -50,33 +48,20 @@ Release build (signed): create a keystore, set signing in
 `android/app/build.gradle`, then `./gradlew assembleRelease` (APK) or
 `bundleRelease` (AAB for the Play Store).
 
-## iOS (on a Mac)
-
-```bash
-cd app
-npm i            # ensure deps
-npx cap add ios  # one time, creates app/ios (Mac only)
-npm run mobile:assets   # optional: brand the icon/splash
-npm run cap:ios         # builds, syncs, opens Xcode
-```
-
-In Xcode select a team under Signing & Capabilities, pick a device/simulator, and
-Run. Archive from Product, Archive for TestFlight/App Store.
-
 ## Updating the app after code changes
 
 ```bash
-npm run cap:sync     # rebuild web + copy into android/ and ios/
+npm run cap:sync     # rebuild web + copy into android/
 ```
 
-Then rebuild in Android Studio / Xcode. During development you can also point the
+Then rebuild in Android Studio. During development you can also point the
 native app at the Vite dev server by setting `server.url` in
 `capacitor.config.ts`, but the default (bundled `dist/`) is what keeps it offline.
 
 ## Branding assets
 
-`npm run mobile:assets` regenerates Android (and iOS, on a Mac) launcher icons and
-splash screens from `build/icon.svg`. Source images land in `app/assets/`.
+`npm run mobile:assets` regenerates Android launcher icons and splash screens
+from `build/icon.svg`. Source images land in `app/assets/`.
 
 ## Changing your AI API key on mobile
 

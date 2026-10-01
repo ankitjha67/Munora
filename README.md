@@ -6,7 +6,7 @@
 
 **Your whole household, one clear number.**
 
-A local-first personal-finance app for Windows, Android and iOS. Your accounts,
+A local-first personal-finance app for Windows and Android. Your accounts,
 transactions, investments, loans and property in one place, and every figure stays on
 your own device. No account to create, no server that holds your data.
 
@@ -37,7 +37,6 @@ Grab the latest build from the [**Releases**](../../releases) page:
 | --- | --- | --- |
 | **Windows** | `Munora Setup <version>.exe` | Download and run the installer. |
 | **Android** | `Munora-<version>.apk` | Allow installs from your browser, then open the file. |
-| **iOS** | build from source | No App Store build; see [below](#build-from-source). |
 
 Inside the app, **Settings → Updates** checks this repository for newer releases and links
 you straight to the download. It only ever asks GitHub for the latest release number;
@@ -166,8 +165,7 @@ bring and store locally:
 
 ## Build from source
 
-Requires Node.js 20+. For Android you also need the Android SDK and JDK 21; for iOS, a
-Mac with Xcode.
+Requires Node.js 20+. For Android you also need the Android SDK and JDK 21.
 
 ```bash
 cd app

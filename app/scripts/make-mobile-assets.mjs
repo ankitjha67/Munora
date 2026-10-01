@@ -1,5 +1,5 @@
 // Render the source icon and a splash image for @capacitor/assets to slice into
-// Android/iOS launcher icons and splash screens. Run: npm run mobile:assets
+// Android launcher icons and splash screens. Run: npm run mobile:assets
 import sharp from 'sharp'
 import fs from 'node:fs'
 

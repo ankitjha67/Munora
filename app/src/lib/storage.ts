@@ -74,7 +74,7 @@ function isCapacitorNative(): boolean {
 }
 
 export function getStorage(): StorageAdapter {
-  // Mobile (Android / iOS via Capacitor): a single JSON file in app storage.
+  // Mobile (Android via Capacitor): a single JSON file in app storage.
   if (isCapacitorNative()) {
     return {
       kind: 'capacitor',
