@@ -1,11 +1,13 @@
 <div align="center">
 
+<img src="docs/icon.png" width="120" height="120" alt="Munora app icon" />
+
 # Munora
 
 **Your whole household, one clear number.**
 
 A local-first personal-finance app for Windows, Android and iOS. Your accounts,
-transactions, investments, loans and property in one place — and every figure stays on
+transactions, investments, loans and property in one place, and every figure stays on
 your own device. No account to create, no server that holds your data.
 
 </div>
